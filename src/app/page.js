@@ -22,7 +22,7 @@ export default async function HomePage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section mejorado con elementos decorativos y animaciones */}
-            <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-24 md:py-32 text-white overflow-hidden">
+            <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 py-24 md:py-32 text-white overflow-hidden">
                 {/* Elementos decorativos de fondo */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
@@ -432,7 +432,7 @@ export default async function HomePage() {
             </section>
 
             {/* Call to Action mejorado */}
-            <section className="relative bg-gradient-to-r from-blue-800 to-blue-600 py-20 overflow-hidden">
+            <section className="relative bg-linear-to-r from-blue-800 to-blue-600 py-20 overflow-hidden">
                 {/* Elementos decorativos */}
                 <div className="absolute inset-0 overflow-hidden">
                     <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
