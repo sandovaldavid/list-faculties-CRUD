@@ -35,17 +35,7 @@ export default function SearchHero({ faculties = [] }) {
     };
 
     return (
-        <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 py-20 md:py-28 text-white overflow-hidden">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-500 rounded-full opacity-20 blur-3xl"></div>
-                <div className="absolute top-1/4 -left-12 w-48 h-48 bg-blue-400 rounded-full opacity-10 blur-2xl"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-white rounded-full opacity-10 blur-xl"></div>
-            </div>
-
-            {/* Grid pattern background */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
+        <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 py-20 md:py-28 text-white overflow-hidden h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -125,7 +115,7 @@ export default function SearchHero({ faculties = [] }) {
             {/* Bottom wave decoration */}
             <div className="absolute bottom-0 left-0 right-0">
                 <svg
-                    className="w-full h-16 md:h-20 text-white"
+                    className="w-full h-24 md:h-36 text-gray-50"
                     viewBox="0 0 1200 120"
                     preserveAspectRatio="none"
                 >
