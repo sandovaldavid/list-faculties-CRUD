@@ -11,7 +11,7 @@
 
 ![Version](https://img.shields.io/badge/Version-3.0.0-success?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/sandovaldavid/list-faculties-unp?style=flat-square)
+![Last Commit](https://img.shields.io/github/last-commit/dev-sandoval/list-faculties-unp?style=flat-square)
 
 ## 📱 Demo
 
@@ -96,7 +96,7 @@ Desarrollado como parte del ecosistema académico de la Universidad Nacional de 
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/sandovaldavid/list-faculties-unp.git
+git clone https://github.com/dev-sandoval/list-faculties-unp.git
 
 # Navegar al directorio del proyecto
 cd list-faculties-unp
@@ -211,17 +211,16 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE par
 
 ## 👨‍💻 Autor
 
-### [David Sandoval](https://github.com/sandovaldavid)
+### [David Sandoval](https://github.com/dev-sandoval)
 
 - 🌐 Portafolio: [devsandoval.me](https://devsandoval.me)
 - 💼 LinkedIn: [@devsandoval](https://linkedin.com/in/devsandoval)
-- 💻 GitHub: [@sandovaldavid](https://github.com/sandovaldavid)
+- 💻 GitHub: [@dev-sandoval](https://github.com/dev-sandoval)
 - 📧 Email: [contact@devsandoval.me](mailto:contact@devsandoval.me)
 
 ---
 
-Desarrollado por [@sandovaldavid](https://github.com/sandovaldavid)
-
+Desarrollado por [@dev-sandoval](https://github.com/dev-sandoval)
 
 > **Nota**: Este proyecto fue creado con fines educativos y de entretenimiento. Siéntete libre de
 > utilizarlo y modificarlo según tus necesidades.
