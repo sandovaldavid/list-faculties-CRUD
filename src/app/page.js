@@ -30,11 +30,12 @@ export default async function HomePage() {
             {/* Block B: Search-First Hero */}
             <SearchHero faculties={faculties} />
 
-            {/* Block C: Feature Spotlight - Campus Navigation */}
-            <FeatureSpotlight />
-
-            {/* Block D: Categorized Faculty Directory */}
-            <FacultyDirectory faculties={faculties} />
+            <div className="bg-linear-to-b from-gray-50 to-white">
+                {/* Block C: Feature Spotlight - Campus Navigation */}
+                <FeatureSpotlight />
+                {/* Block D: Categorized Faculty Directory */}
+                <FacultyDirectory faculties={faculties} />
+            </div>
 
             {/* Block E: Personal Brand Footer */}
             <Footer />
