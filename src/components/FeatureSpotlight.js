@@ -3,14 +3,11 @@ import Image from 'next/image';
 
 export default function FeatureSpotlight() {
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-8">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-12">
                     {/* Text Content */}
                     <div className="lg:w-1/2 space-y-6">
-                        <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 mb-2">
-                            Tu diferencial
-                        </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                             Navegación del Campus
                         </h2>
