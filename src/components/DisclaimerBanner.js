@@ -20,11 +20,11 @@ export default function DisclaimerBanner() {
     if (!isVisible) return null;
 
     return (
-        <div className="bg-amber-50 border-b border-amber-200 py-3 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-                <div className="flex items-center gap-3 flex-1">
+        <div className="fixed bottom-4 right-4 z-50 max-w-sm animate-slide-in">
+            <div className="bg-amber-50 border border-amber-200 rounded-lg shadow-lg p-4">
+                <div className="flex items-start gap-3">
                     <svg
-                        className="w-5 h-5 text-amber-600 shrink-0"
+                        className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                     >
@@ -34,25 +34,34 @@ export default function DisclaimerBanner() {
                             clipRule="evenodd"
                         />
                     </svg>
-                    <p className="text-sm text-amber-800">
-                        <span className="font-semibold">Proyecto independiente no oficial.</span>{' '}
-                        Herramienta creada por estudiantes para estudiantes.
-                    </p>
+                    <div className="flex-1">
+                        <p className="text-sm text-amber-800">
+                            <span className="font-semibold">
+                                Proyecto independiente no oficial.
+                            </span>{' '}
+                            Herramienta creada por estudiantes para estudiantes.
+                        </p>
+                    </div>
+                    <button
+                        onClick={handleDismiss}
+                        className="text-amber-600 hover:text-amber-800 transition-colors shrink-0"
+                        aria-label="Cerrar aviso"
+                    >
+                        <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                    </button>
                 </div>
-                <button
-                    onClick={handleDismiss}
-                    className="text-amber-600 hover:text-amber-800 transition-colors shrink-0"
-                    aria-label="Cerrar aviso"
-                >
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
-                </button>
             </div>
         </div>
     );
