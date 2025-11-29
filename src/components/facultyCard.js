@@ -5,7 +5,7 @@ function FacultyCard({ faculty }) {
     return (
         <div className="group relative transition-all duration-300 bg-white rounded-xl shadow-sm hover:shadow-xl overflow-hidden border border-gray-100 hover:border-blue-200 flex flex-col h-full transform hover:-translate-y-2">
             {/* Improved overlay effect on hover with more gradient depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-blue-800/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-blue-900/80 via-blue-800/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
 
             <div className="relative h-52 w-full overflow-hidden">
                 {faculty.path_img ? (
@@ -18,7 +18,7 @@ function FacultyCard({ faculty }) {
                         priority
                     />
                 ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center text-blue-400">
+                    <div className="w-full h-full bg-linear-to-br from-blue-100 to-blue-50 flex items-center justify-center text-blue-400">
                         <svg
                             className="w-20 h-20 opacity-40"
                             fill="none"
@@ -37,7 +37,7 @@ function FacultyCard({ faculty }) {
 
                 {/* Enhanced badge with subtle animation */}
                 {faculty.id <= 3 && (
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded-full z-20 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                    <div className="absolute top-4 right-4 bg-linear-to-r from-blue-600 to-blue-700 text-white text-xs font-medium px-3 py-1.5 rounded-full z-20 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
                         <span className="flex items-center">
                             <svg
                                 className="w-3 h-3 mr-1 animate-pulse"
@@ -56,7 +56,7 @@ function FacultyCard({ faculty }) {
                 )}
             </div>
 
-            <div className="p-6 flex-grow flex flex-col relative z-20">
+            <div className="p-6 grow flex flex-col relative z-20">
                 {/* Added subtle indicator for the title */}
                 <div className="flex items-center mb-2">
                     <div className="w-8 h-1 bg-blue-500 rounded-full mr-2 opacity-70 group-hover:w-12 transition-all duration-300"></div>
@@ -65,9 +65,30 @@ function FacultyCard({ faculty }) {
                     </h3>
                 </div>
 
-                <p className="text-gray-600 mb-4 flex-grow line-clamp-3 group-hover:text-gray-700">
+                <p className="text-gray-600 mb-4 grow line-clamp-3 group-hover:text-gray-700">
                     {faculty.description ? faculty.description : 'Sin descripción disponible'}
                 </p>
+
+                {/* School Count Badge */}
+                {faculty.schools_count !== undefined && (
+                    <div className="mb-4 inline-flex items-center px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                        <svg
+                            className="w-4 h-4 mr-1.5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                            />
+                        </svg>
+                        {faculty.schools_count}{' '}
+                        {faculty.schools_count === 1 ? 'Escuela' : 'Escuelas'}
+                    </div>
+                )}
 
                 <div className="flex justify-between items-center mt-2">
                     <Link
