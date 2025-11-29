@@ -44,8 +44,8 @@ function Navbar() {
 
     return (
         <nav
-            className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-                scrolled ? 'bg-white text-zinc-800 shadow-md' : 'bg-zinc-800 text-white'
+            className={`w-full fixed top-0 z-50 transition-all duration-300 bg-zinc-600/70 backdrop-blur-md text-white border-b border-white/10 ${
+                scrolled ? 'shadow-lg' : 'shadow-sm'
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +60,7 @@ function Navbar() {
                         >
                             <div className="flex items-center mr-2">
                                 <svg
-                                    className={`w-8 h-8 ${scrolled ? 'text-blue-600' : 'text-blue-400'}`}
+                                    className="w-8 h-8 text-blue-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -86,12 +86,10 @@ function Navbar() {
                                 </svg>
                             </div>
                             <div className="flex flex-col leading-none">
-                                <h3
-                                    className={`text-lg md:text-xl font-bold transition-colors duration-300 ${scrolled ? 'text-zinc-800' : 'text-white'}`}
-                                >
+                                <h3 className="text-lg md:text-xl font-bold transition-colors duration-300 text-white">
                                     Facultades UNP
                                 </h3>
-                                <span className="text-xs opacity-75 hidden sm:block">
+                                <span className="text-xs font-bold hidden sm:block">
                                     Universidad Nacional de Piura
                                 </span>
                             </div>
@@ -104,8 +102,8 @@ function Navbar() {
                             href="/faculties"
                             className={`relative px-3 py-2 rounded-md transition duration-300 ${
                                 pathname === '/faculties'
-                                    ? `font-medium ${scrolled ? 'text-blue-600' : 'text-blue-400'}`
-                                    : `${scrolled ? 'text-zinc-600 hover:text-blue-600' : 'text-gray-300 hover:text-white hover:bg-zinc-700'}`
+                                    ? 'font-medium text-blue-400'
+                                    : 'text-gray-300 hover:text-white hover:bg-zinc-700/50'
                             }`}
                         >
                             <span className="flex items-center">
@@ -125,9 +123,7 @@ function Navbar() {
                                 Facultades
                             </span>
                             {pathname === '/faculties' && (
-                                <span
-                                    className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-blue-600' : 'bg-blue-400'}`}
-                                ></span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400"></span>
                             )}
                         </Link>
 
@@ -135,8 +131,8 @@ function Navbar() {
                             href="/about"
                             className={`relative px-3 py-2 rounded-md transition duration-300 ${
                                 pathname === '/about'
-                                    ? `font-medium ${scrolled ? 'text-blue-600' : 'text-blue-400'}`
-                                    : `${scrolled ? 'text-zinc-600 hover:text-blue-600' : 'text-gray-300 hover:text-white hover:bg-zinc-700'}`
+                                    ? 'font-medium text-blue-400'
+                                    : 'text-gray-300 hover:text-white hover:bg-zinc-700/50'
                             }`}
                         >
                             <span className="flex items-center">
@@ -156,9 +152,7 @@ function Navbar() {
                                 Acerca de
                             </span>
                             {pathname === '/about' && (
-                                <span
-                                    className={`absolute bottom-0 left-0 w-full h-0.5 ${scrolled ? 'bg-blue-600' : 'bg-blue-400'}`}
-                                ></span>
+                                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400"></span>
                             )}
                         </Link>
 
@@ -166,11 +160,7 @@ function Navbar() {
 
                         <Link
                             href="/new"
-                            className={`flex items-center px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 ${
-                                pathname === '/new'
-                                    ? `${scrolled ? 'bg-blue-600 text-white' : 'bg-blue-500 text-white'}`
-                                    : `${scrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-blue-500 text-white hover:bg-blue-600'}`
-                            }`}
+                            className="flex items-center px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
                         >
                             <svg
                                 className="w-5 h-5 mr-1.5"
@@ -194,27 +184,23 @@ function Navbar() {
                         <button
                             onClick={toggleMenu}
                             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
-                            className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 focus:outline-none ${
-                                scrolled
-                                    ? 'text-zinc-800 hover:bg-gray-200'
-                                    : 'text-white hover:bg-zinc-700'
-                            }`}
+                            className="flex items-center justify-center w-10 h-10 rounded-full text-white hover:bg-zinc-700/50 transition-colors duration-300 focus:outline-none"
                         >
                             <div className="relative w-6 h-6">
                                 <span
-                                    className={`absolute h-0.5 w-6 transform transition-all duration-300 ${
-                                        scrolled ? 'bg-zinc-800' : 'bg-white'
-                                    } ${isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'}`}
+                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                        isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
+                                    }`}
                                 ></span>
                                 <span
-                                    className={`absolute h-0.5 w-6 transform transition-all duration-300 ${
-                                        scrolled ? 'bg-zinc-800' : 'bg-white'
-                                    } ${isOpen ? 'opacity-0' : 'opacity-100'}`}
+                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                        isOpen ? 'opacity-0' : 'opacity-100'
+                                    }`}
                                 ></span>
                                 <span
-                                    className={`absolute h-0.5 w-6 transform transition-all duration-300 ${
-                                        scrolled ? 'bg-zinc-800' : 'bg-white'
-                                    } ${isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'}`}
+                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                        isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
+                                    }`}
                                 ></span>
                             </div>
                         </button>
@@ -225,9 +211,9 @@ function Navbar() {
             {/* Mobile Menu con animación de deslizamiento */}
             {isOpen && (
                 <div
-                    className={`md:hidden overflow-hidden transition-all duration-300 ${
-                        scrolled ? 'bg-white text-zinc-800' : 'bg-zinc-800 text-white'
-                    } ${animateMenu ? 'max-h-64' : 'max-h-0'}`}
+                    className={`md:hidden overflow-hidden transition-all duration-300 bg-zinc-900/90 backdrop-blur-md text-white border-t border-white/10 ${
+                        animateMenu ? 'max-h-64' : 'max-h-0'
+                    }`}
                     style={{ transition: 'max-height 300ms ease-in-out' }}
                 >
                     <div className="px-4 pt-2 pb-4 space-y-1.5">
@@ -235,13 +221,13 @@ function Navbar() {
                             href="/faculties"
                             className={`block px-4 py-3 rounded-lg transition duration-200 ${
                                 pathname === '/faculties'
-                                    ? `font-medium ${scrolled ? 'bg-blue-50 text-blue-600' : 'bg-zinc-700 text-blue-400'}`
-                                    : `${scrolled ? 'hover:bg-gray-100' : 'hover:bg-zinc-700'}`
+                                    ? 'font-medium bg-zinc-700/70 text-blue-400'
+                                    : 'hover:bg-zinc-700/50'
                             }`}
                         >
                             <span className="flex items-center">
                                 <svg
-                                    className={`w-5 h-5 mr-3 ${pathname === '/faculties' ? (scrolled ? 'text-blue-600' : 'text-blue-400') : ''}`}
+                                    className={`w-5 h-5 mr-3 ${pathname === '/faculties' ? 'text-blue-400' : ''}`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -261,13 +247,13 @@ function Navbar() {
                             href="/about"
                             className={`block px-4 py-3 rounded-lg transition duration-200 ${
                                 pathname === '/about'
-                                    ? `font-medium ${scrolled ? 'bg-blue-50 text-blue-600' : 'bg-zinc-700 text-blue-400'}`
-                                    : `${scrolled ? 'hover:bg-gray-100' : 'hover:bg-zinc-700'}`
+                                    ? 'font-medium bg-zinc-700/70 text-blue-400'
+                                    : 'hover:bg-zinc-700/50'
                             }`}
                         >
                             <span className="flex items-center">
                                 <svg
-                                    className={`w-5 h-5 mr-3 ${pathname === '/about' ? (scrolled ? 'text-blue-600' : 'text-blue-400') : ''}`}
+                                    className={`w-5 h-5 mr-3 ${pathname === '/about' ? 'text-blue-400' : ''}`}
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
