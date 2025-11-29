@@ -95,7 +95,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="es" className="dark:bg-gray-950">
+        <html lang="es">
             <head>
                 <meta property="og:title" content={SITE_NAME} />
                 <meta property="og:description" content={SITE_DESCRIPTION} />
@@ -104,7 +104,7 @@ export default function RootLayout({ children }) {
             </head>
             <body className={inter.className}>
                 <Navbar />
-                <div className="mt-16 w-full">{children}</div>
+                <div className="w-full">{children}</div>
             </body>
         </html>
     );
