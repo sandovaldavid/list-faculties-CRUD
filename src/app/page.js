@@ -1,10 +1,9 @@
 import { generateBasicMetadata } from '@/libs/seoConfig';
 import { pool } from '@/libs/mysql';
-import DisclaimerBanner from '@/components/DisclaimerBanner';
-import SearchHero from '@/components/SearchHero';
-import FeatureSpotlight from '@/components/FeatureSpotlight';
-import FacultyDirectory from '@/components/FacultyDirectory';
-import Footer from '@/components/Footer';
+import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
+import SearchHero from '@/components/sections/SearchHero';
+import FeatureSpotlight from '@/components/sections/FeatureSpotlight';
+import FacultyDirectory from '@/components/sections/FacultyDirectory';
 
 export const metadata = generateBasicMetadata('home');
 
@@ -36,9 +35,6 @@ export default async function HomePage() {
                 {/* Block D: Categorized Faculty Directory */}
                 <FacultyDirectory faculties={faculties} />
             </div>
-
-            {/* Block E: Personal Brand Footer */}
-            <Footer />
         </div>
     );
 }
