@@ -5,7 +5,16 @@ import { processImage } from '@/libs/processImage';
 
 export async function GET() {
     try {
-        const results = await pool.query('SELECT * FROM faculties');
+        const results = await pool.query(`
+            SELECT 
+                f.*,
+                COUNT(s.id) as schools_count
+            FROM faculties f
+            LEFT JOIN schools s ON f.id = s.faculty_id
+            GROUP BY f.id
+            ORDER BY f.name ASC
+        `);
+
         if (results.length === 0) {
             return NextResponse.json({ message: 'No faculties found' }, { status: 404 });
         }
