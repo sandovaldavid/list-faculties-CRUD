@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import FacultyCard from './facultyCard';
+import FacultyCard from '../faculty/FacultyCard';
 
 export default function FacultyDirectory({ faculties = [] }) {
     const [activeCategory, setActiveCategory] = useState('all');
