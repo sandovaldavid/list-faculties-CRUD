@@ -4,53 +4,84 @@ import RefreshIcon from '@/components/icons/RefreshIcon';
 
 export default function ProjectInfoSection() {
     return (
-        <section className="mb-16 bg-gray-50 p-8 rounded-lg animate-fade-in border border-gray-200">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">
-                Sistema de Gestión de Facultades
-            </h2>
-            <p className="text-gray-700 mb-6">
-                Una solución web moderna que demuestra la aplicación de arquitecturas escalables y
-                buenas prácticas de desarrollo. El sistema proporciona una forma eficiente de
-                gestionar la información de las facultades de la Universidad Nacional de Piura,
-                priorizando la experiencia del usuario y el rendimiento.
-            </p>
-
-            <h3 className="text-2xl font-bold mb-4 text-gray-900">Arquitectura Técnica</h3>
-            <p className="text-gray-700 mb-6">
-                Construido sobre una arquitectura <strong>Serverless</strong> para garantizar
-                escalabilidad automática y costos optimizados. Utilizamos{' '}
-                <strong>Next.js App Router</strong> para aprovechar Server Components, optimizar el
-                SEO mediante renderizado del lado del servidor, y mejorar la carga inicial de la
-                aplicación. La base de datos relacional está <strong>normalizada</strong> para
-                manejar eficientemente la jerarquía compleja entre Facultades, Escuelas
-                Profesionales y sus relaciones.
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover-lift">
-                    <TargetIcon className="w-12 h-12 text-blue-500 mb-4" />
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Objetivo</h3>
-                    <p className="text-gray-700">
-                        Facilitar la administración de las facultades universitarias mediante un
-                        sistema CRUD intuitivo y eficiente, demostrando buenas prácticas de
-                        desarrollo.
-                    </p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover-lift">
-                    <GearIcon className="w-12 h-12 text-blue-500 mb-4" />
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Stack Tecnológico</h3>
-                    <p className="text-gray-700">
-                        Next.js 14 con App Router, TailwindCSS para diseño responsive, MySQL para
-                        persistencia de datos, y Vercel para deployment continuo.
-                    </p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover-lift">
-                    <RefreshIcon className="w-12 h-12 text-blue-500 mb-4" />
-                    <h3 className="text-xl font-bold mb-2 text-gray-900">Funcionalidades</h3>
-                    <p className="text-gray-700">
-                        Creación, visualización, actualización y eliminación de facultades, con
-                        gestión de imágenes optimizadas y validación de datos en tiempo real.
-                    </p>
+        <section className="py-16 md:py-24 bg-white">
+            <div className="container mx-auto px-4 max-w-6xl">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="order-2 lg:order-1">
+                        <div className="grid gap-8">
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+                                    <TargetIcon className="w-6 h-6 text-blue-600" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                        Ubicación Rápida
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        Encuentra fácilmente la ubicación de tu facultad y pabellón
+                                        en el campus universitario.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+                                    <GearIcon className="w-6 h-6 text-blue-600" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                        Enlaces Oficiales
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        Accede directamente a las páginas web oficiales de cada
+                                        escuela para trámites y mallas curriculares.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex gap-6 items-start">
+                                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+                                    <RefreshIcon className="w-6 h-6 text-blue-600" />
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                                        Mapa Interactivo
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed">
+                                        Próximamente podrás visualizar geoespacialmente cada
+                                        pabellón con Mapbox/Leaflet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="order-1 lg:order-2">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                            Directorio y Mapa Universitario
+                        </h2>
+                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                            Esta plataforma nace para resolver el problema de la dispersión de
+                            información en el campus. Centralizamos los datos de las 14 facultades
+                            para que puedas ubicarte y conectar con tu escuela al instante.
+                        </p>
+                        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                            <h3 className="text-xl font-bold text-gray-900 mb-4">
+                                ¿Qué puedes hacer aquí?
+                            </h3>
+                            <ul className="space-y-3">
+                                <li className="flex items-center text-gray-600">
+                                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    Buscar facultades y escuelas
+                                </li>
+                                <li className="flex items-center text-gray-600">
+                                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    Ver fotos de los pabellones
+                                </li>
+                                <li className="flex items-center text-gray-600">
+                                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                                    Ir a los sitios web oficiales
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
