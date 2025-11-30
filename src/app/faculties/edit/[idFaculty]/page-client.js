@@ -2,7 +2,8 @@
 
 import { DEFAULT_OG_IMAGE, getCanonicalUrl } from '@/libs/seoConfig';
 import Head from 'next/head';
-import FacultyForm from '@/components/facultyForm';
+import FacultyForm from '@/components/faculty/FacultyForm';
+import PageHeader from '@/components/ui/PageHeader';
 
 function EditFacultyClientPage({ params }) {
     const facultyId = params.idFaculty;
@@ -56,8 +57,15 @@ function EditFacultyClientPage({ params }) {
                 />
             </Head>
 
-            <div className="flex justify-center items-center h-full">
-                <FacultyForm />
+            <div className="min-h-screen bg-gray-50 py-12">
+                <div className="container mx-auto px-4 max-w-7xl">
+                    <PageHeader
+                        title="Editar Facultad"
+                        description="Actualiza la información de esta facultad"
+                        backUrl="/faculties"
+                    />
+                    <FacultyForm />
+                </div>
             </div>
         </>
     );
