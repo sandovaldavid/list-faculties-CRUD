@@ -5,7 +5,6 @@ import FacultiesGrid from '@/components/sections/faculties/FacultiesGrid';
 import { facultyService } from '@/services/facultyService';
 
 export const metadata = generateBasicMetadata('faculties');
-export const viewport = generateViewport();
 
 export const revalidate = 0;
 
