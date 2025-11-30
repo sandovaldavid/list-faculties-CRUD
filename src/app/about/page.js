@@ -11,7 +11,7 @@ export const metadata = generateBasicMetadata('about');
 
 function AboutPage() {
     return (
-        <div className="container mx-auto px-4 py-16 mt-16 max-w-6xl">
+        <div className="min-h-screen">
             <AboutHero />
             <MissionSection />
             <UniversitySection />
