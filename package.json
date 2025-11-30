@@ -1,6 +1,6 @@
 {
-    "name": "web-app-list-fc",
-    "version": "0.1.0",
+    "name": "unp-campus-map",
+    "version": "3.0.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
