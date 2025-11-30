@@ -1,226 +1,133 @@
-# 📚 Sistema de Gestión de Facultades UNP
+# 🗺️ UNP Campus Map & Directory
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.2.5-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-9.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Cloudinary](https://img.shields.io/badge/Cloudinary-Image_Storage-4285F4?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](./LICENSE)
 
-> 🎓 Plataforma integral para la administración académica. Gestiona tus facultades de manera sencilla, moderna y eficiente.
+> 🚀 **Misión:** Ayudar a los estudiantes de la Universidad Nacional de Piura a encontrar sus escuelas, pabellones y recursos académicos rápidamente.
 
-![Version](https://img.shields.io/badge/Version-3.0.0-success?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
-![Last Commit](https://img.shields.io/github/last-commit/dev-sandoval/list-faculties-unp?style=flat-square)
+---
 
-## 📱 Demo
+### ⚠️ Aviso Importante
+
+**Este es un proyecto independiente Open Source.** Desarrollado por estudiantes para estudiantes. No tiene afiliación oficial con la Universidad Nacional de Piura.
+
+---
+
+## 📱 Vistazo Rápido
 
 <div align="center">
-  <h3>Vista Desktop</h3>
   <img src="./public/images/mockups/desktop.png" alt="Vista Desktop" width="800"/>
-  
-  <h3>Vista Mobile</h3>
+  <br/><br/>
   <div style="display: flex; justify-content: center; gap: 20px;">
-    <img src="./public/images/mockups/mobile-2.png" alt="Vista Mobile 1" width="250"/>
-    <img src="./public/images/mockups/mobile.png" alt="Vista Mobile 2" width="250"/>
+    <img src="./public/images/mockups/mobile-2.png" alt="Vista Mobile" width="250"/>
+    <img src="./public/images/mockups/mobile.png" alt="Card Detail" width="250"/>
   </div>
 </div>
 
-## 🎯 Descripción General
+## 🎯 El Problema y La Solución
 
-Aplicación web para la gestión completa de facultades universitarias. Este proyecto proporciona una interfaz CRUD (Crear, Leer, Actualizar, Eliminar) con un diseño moderno, responsivo y optimizado para todos los dispositivos.
+**El Problema:** El campus universitario es extenso y complejo. Los nuevos estudiantes (y visitantes) a menudo tienen dificultades para ubicar físicamente sus escuelas, pabellones o encontrar los enlaces oficiales correctos entre tanta información dispersa.
 
-Desarrollado como parte del ecosistema académico de la Universidad Nacional de Piura (UNP), este sistema facilita la administración eficiente de la información de las diferentes facultades.
+**La Solución:** Una plataforma centralizada y _Location-First_ (prioridad en ubicación) que permite:
 
-## ✨ Características
+1.  **Buscar** facultades y escuelas al instante.
+2.  **Ubicar** geográficamente cada pabellón en un mapa interactivo.
+3.  **Conectar** con los recursos oficiales de la universidad.
 
-| Característica                | Descripción                                                                |
-| ----------------------------- | -------------------------------------------------------------------------- |
-| ✅ **Creación**               | Agrega nuevas facultades con imágenes y toda su información relevante      |
-| 📖 **Visualización**          | Lista completa de facultades con tarjetas interactivas y página de detalle |
-| 🔄 **Actualización**          | Edición completa de información e imágenes de facultades existentes        |
-| 🗑️ **Eliminación**            | Eliminación segura con confirmación para prevenir errores                  |
-| 📱 **Responsive**             | Diseño adaptable a cualquier dispositivo (móvil, tablet, escritorio)       |
-| 🖼️ **Gestión de imágenes**    | Soporte para carga, actualización y optimización de imágenes               |
-| 🌐 **API RESTful**            | Integración completa con endpoints para todas las operaciones              |
-| 🚀 **Rendimiento optimizado** | Renderizado dinámico para máxima velocidad y estabilidad                   |
+## ✨ Funcionalidades Principales
 
-## 🛠️ Stack Tecnológico
+### 🎓 Para Estudiantes (Frontend Público)
 
-<table>
-  <tr>
-    <th>Tecnología</th>
-    <th>Propósito</th>
-    <th>Versión</th>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js" alt="Next.js" /></td>
-    <td>Framework Frontend & Backend</td>
-    <td>14.2.5</td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" /></td>
-    <td>Base de Datos</td>
-    <td>8.0</td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" /></td>
-    <td>Estilos y Diseño</td>
-    <td>3.4.1</td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" /></td>
-    <td>Contenedores</td>
-    <td>Latest</td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-Cloudinary-4285F4?style=flat-square&logo=cloudinary&logoColor=white" alt="Cloudinary" /></td>
-    <td>Almacenamiento de Imágenes</td>
-    <td>API v2</td>
-  </tr>
-  <tr>
-    <td><img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" /></td>
-    <td>UI Interactiva</td>
-    <td>18+</td>
-  </tr>
-</table>
+- **Directorio Inteligente:** Búsqueda rápida de las 14 facultades y sus respectivas escuelas profesionales.
+- **Mapa Interactivo:** Visualización geoespacial de los pabellones (Próximamente con Mapbox/Leaflet).
+- **Enlaces Oficiales:** Acceso directo a las webs institucionales de cada escuela para trámites y mallas curriculares.
+- **Diseño Responsivo:** Optimizado para funcionar perfecto en el celular mientras caminas por el campus.
 
-## 📋 Prerrequisitos
+### 🛡️ Para Administradores (Backoffice)
 
-- ✅ Node.js ≥ 18 o Bun runtime
-- ✅ Docker & Docker Compose (recomendado)
-- ✅ MySQL 8.0
-- ✅ npm o bun package manager
+- **Gestión de Contenido:** Sistema CRUD protegido para actualizar información de facultades y escuelas.
+- **Seguridad sin Fricción:** Implementación de _Admin Secret Cookie Middleware_ para gestión segura sin necesidad de un sistema de usuarios complejo.
+- **Gestión de Medios:** Integración con Cloudinary para optimización de imágenes de fachadas.
 
-## 🚀 Instalación
+## 🛠️ Ingeniería y Arquitectura
+
+Este proyecto demuestra patrones de desarrollo modernos y escalables:
+
+| Área                | Tecnología / Patrón         | Descripción                                                                   |
+| :------------------ | :-------------------------- | :---------------------------------------------------------------------------- |
+| **Frontend**        | **Next.js 14 (App Router)** | Renderizado híbrido (SSR/CSR) para máximo SEO y velocidad.                    |
+| **Estilos**         | **Tailwind CSS**            | Diseño de interfaz moderno, accesible y _mobile-first_.                       |
+| **Backend**         | **API Routes**              | Endpoints RESTful estructurados por recursos.                                 |
+| **Datos**           | **MySQL 8.0**               | Base de datos relacional normalizada (Facultades 1:N Escuelas).               |
+| **Infraestructura** | **Docker**                  | Contenerización completa para entornos de desarrollo y producción.            |
+| **Seguridad**       | **Middleware**              | Protección de rutas administrativas mediante validación de tokens en cookies. |
+
+## 🚀 Instalación y Despliegue Local
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/dev-sandoval/list-faculties-unp.git
+# 1. Clonar el repositorio
+git clone https://github.com/dev-sandoval/faculties-web.git
+cd faculties-web
 
-# Navegar al directorio del proyecto
-cd list-faculties-unp
-
-# Instalar dependencias
+# 2. Instalar dependencias
 npm install
-# o con bun
-bun install
 
-# Iniciar contenedores Docker en modo desarrollo
-docker-compose up web-dev -d
+# 3. Configurar variables de entorno
+# Crea un archivo .env basado en .env.example
+cp .env.example .env
 
-# Iniciar contenedores Docker en modo producción
-docker-compose up web-prod -d
+# 4. Levantar entorno con Docker (Base de datos)
+docker-compose up -d
 
-# Inicializar base de datos
+# 5. Inicializar esquema de datos (incluyendo tabla de escuelas)
 docker exec -i db_facultades mysql -u user_facultades -ppassword < database/db.sql
 
-# Ejecutar servidor de desarrollo
+# 6. Iniciar servidor de desarrollo
 npm run dev
-# o con bun
-bun run dev
 ```
 
-## 💾 Configuración de Base de Datos
+## 🗺️ Roadmap del Proyecto
 
-El esquema de la base de datos incluye:
-
-```sql
-CREATE TABLE faculties (
-    id          int primary key auto_increment,
-    name        varchar(100) not null,
-    description text,
-    path_img    VARCHAR(255)
-);
-```
-
-## 🔐 Variables de Entorno
-
-Crea un archivo `.env` con:
-
-```env
-# Base de datos
-DB_HOST=localhost
-DB_USER=adm
-DB_PASSWORD=adm
-DB_DATABASE=facultades
-DB_PORT=3306
-
-# Cloudinary
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-# URLs
-NEXT_PUBLIC_BACKEND_URL=localhost:3000
-NEXT_PUBLIC_VERCEL_URL=your-app.vercel.app
-```
-
-## 📁 Estructura del Proyecto
-
-```
-list-faculties-unp/
-├── 📂 src/
-│   ├── 📂 app/            # Páginas Next.js
-│   ├── 📂 components/     # Componentes React
-│   └── 📂 libs/           # Utilidades y configuraciones
-├── 📂 database/           # Scripts de base de datos
-├── 📂 docker/             # Configuración Docker
-│   ├── 📂 deployment/     # Config para producción
-│   └── 📂 development/    # Config para desarrollo
-├── 📂 docs/               # Documentación
-│   ├── 📄 release-v1.0.0.md
-│   ├── 📄 release-v2.0.0.md
-│   └── 📄 release-v3.0.0.md
-└── 📂 public/             # Activos estáticos
-```
-
-## 🔄 Endpoints de la API
-
-| Endpoint             | Método | Descripción                  | Auth |
-| -------------------- | ------ | ---------------------------- | ---- |
-| `/api/faculties`     | GET    | Obtener todas las facultades | No   |
-| `/api/faculties`     | POST   | Crear nueva facultad         | No   |
-| `/api/faculties/:id` | GET    | Obtener facultad por ID      | No   |
-| `/api/faculties/:id` | PUT    | Actualizar facultad          | No   |
-| `/api/faculties/:id` | DELETE | Eliminar facultad            | No   |
-
-## 📝 Historial de Versiones
-
-| Versión                            | Fecha      | Características                                                        |
-| ---------------------------------- | ---------- | ---------------------------------------------------------------------- |
-| [v3.0.0](./docs/release-v3.0.0.md) | Abril 2025 | Mejoras de rendimiento, optimización para Vercel, renderizado dinámico |
-| [v2.0.0](./docs/release-v2.0.0.md) | Abril 2025 | Diseño responsivo mejorado, optimización de componentes                |
-| [v1.0.0](./docs/release-v1.0.0.md) | Enero 2025 | Lanzamiento inicial con funcionalidades CRUD básicas                   |
+- [x] Arquitectura base y Directorio de Facultades.
+- [x] Sistema de administración (CRUD) seguro.
+- [ ] **Fase 2:** Implementación de Mapa Interactivo (Mapbox/Leaflet).
+- [ ] **Fase 3:** Búsqueda por "Escuela" (Fuzzy Search).
+- [ ] **Fase 4:** Geolocalización del usuario ("Cómo llegar").
 
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Por favor, sigue estos pasos:
-
-1. 🍴 Haz un fork del repositorio
-2. 🌿 Crea tu rama de características (`git checkout -b feature/CaracteristicaIncreible`)
-3. 💾 Haz commit de tus cambios (`git commit -m 'Añadir alguna CaracteristicaIncreible'`)
-4. 📤 Sube la rama (`git push origin feature/CaracteristicaIncreible`)
-5. 📩 Abre un Pull Request
+¡Las Pull Requests son bienvenidas\! Este es un proyecto Open Source pensado para la comunidad.
+Si tienes fotos actualizadas de los pabellones o coordenadas GPS precisas, por favor abre un Issue.
 
 ## 📄 Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+Distribuido bajo la licencia **MIT**. Ver `LICENSE` para más información.
 
 ---
 
-## 👨‍💻 Autor
+## 👨‍💻 Contacto
 
-### [David Sandoval](https://github.com/dev-sandoval)
+Soy **Juan David Sandoval**, Ingeniero Informático con especialización en Data Science y
+Desarrollador Web. Me enfoco en construir aplicaciones **que combinen la ciencia de datos,
+inteligencia artificial y el desarrollo web moderno**.
 
-- 🌐 Portafolio: [devsandoval.me](https://devsandoval.me)
-- 💼 LinkedIn: [@devsandoval](https://linkedin.com/in/devsandoval)
-- 💻 GitHub: [@dev-sandoval](https://github.com/dev-sandoval)
-- 📧 Email: [contact@devsandoval.me](mailto:contact@devsandoval.me)
+Si estás buscando talento que combine el dominio técnico de backend, frontend y bases de datos:
+
+- **Perfil Profesional:** [LinkedIn - Juan David Sandoval](https://linkedin.com/in/devsandoval)
+- **Código:** [GitHub - sandovaldavid](https://github.com/sandovaldavid)
+- **Portafolio:** [DevSandoval](https://devsandoval.me)
 
 ---
 
-Desarrollado por [@dev-sandoval](https://github.com/dev-sandoval)
+<div align="center">
 
-> **Nota**: Este proyecto fue creado con fines educativos y de entretenimiento. Siéntete libre de
-> utilizarlo y modificarlo según tus necesidades.
+### 🌟 ¿Te resultó útil? ¡Dale una estrella! ⭐
+
+---
+
+**Hecho para los estudiantes de la Universidad Nacional de Piura**
+
+</div>
