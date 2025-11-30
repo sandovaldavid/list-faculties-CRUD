@@ -1,25 +1,14 @@
 import { generateBasicMetadata } from '@/libs/seoConfig';
-import { pool } from '@/libs/mysql';
 import DisclaimerBanner from '@/components/layout/DisclaimerBanner';
 import SearchHero from '@/components/sections/SearchHero';
 import FeatureSpotlight from '@/components/sections/FeatureSpotlight';
 import FacultyDirectory from '@/components/sections/FacultyDirectory';
+import { facultyService } from '@/services/facultyService';
 
 export const metadata = generateBasicMetadata('home');
 
-// Load all faculties for search and directory
-async function loadFaculties() {
-    try {
-        const result = await pool.query('SELECT * FROM faculties ORDER BY name ASC');
-        return Array.isArray(result) ? result : [];
-    } catch (error) {
-        console.error('Error loading faculties:', error);
-        return [];
-    }
-}
-
 export default async function HomePage() {
-    const faculties = await loadFaculties();
+    const faculties = await facultyService.getAllFaculties();
 
     return (
         <div className="min-h-screen">
