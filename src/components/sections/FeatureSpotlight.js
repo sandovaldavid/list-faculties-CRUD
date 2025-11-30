@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { CheckIcon } from '@/components/icons/StatusIcons';
+import { ArrowRightIcon } from '@/components/icons/NavigationIcons';
+import { MapIcon } from '@/components/icons/ContactIcons';
 
 export default function FeatureSpotlight() {
     return (
@@ -17,55 +20,19 @@ export default function FeatureSpotlight() {
                         </p>
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
-                                <svg
-                                    className="w-6 h-6 text-green-500 shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M5 13l4 4L19 7"
-                                    />
-                                </svg>
+                                <CheckIcon className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
                                 <span className="text-gray-700">
                                     Ubicaciones exactas de todas las facultades
                                 </span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg
-                                    className="w-6 h-6 text-green-500 shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M5 13l4 4L19 7"
-                                    />
-                                </svg>
+                                <CheckIcon className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
                                 <span className="text-gray-700">
                                     Información de accesos y puntos de referencia
                                 </span>
                             </li>
                             <li className="flex items-start gap-3">
-                                <svg
-                                    className="w-6 h-6 text-green-500 shrink-0 mt-0.5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M5 13l4 4L19 7"
-                                    />
-                                </svg>
+                                <CheckIcon className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
                                 <span className="text-gray-700">
                                     Mapa interactivo del campus universitario
                                 </span>
@@ -74,22 +41,10 @@ export default function FeatureSpotlight() {
                         <div className="pt-4">
                             <Link
                                 href="/faculties"
-                                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform"
                             >
                                 <span>Explorar Mapa Interactivo</span>
-                                <svg
-                                    className="w-5 h-5 ml-2"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                                    />
-                                </svg>
+                                <ArrowRightIcon className="w-5 h-5 ml-2" />
                             </Link>
                         </div>
                     </div>
@@ -100,19 +55,7 @@ export default function FeatureSpotlight() {
                             <div className="aspect-video bg-linear-to-br from-blue-100 to-blue-50 flex items-center justify-center">
                                 {/* Placeholder for campus map - can be replaced with actual image */}
                                 <div className="text-center p-8">
-                                    <svg
-                                        className="w-32 h-32 mx-auto text-blue-300 mb-4"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={1.5}
-                                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-                                        />
-                                    </svg>
+                                    <MapIcon className="w-32 h-32 mx-auto text-blue-300 mb-4" />
                                     <p className="text-blue-600 font-medium">
                                         Mapa Interactivo del Campus
                                     </p>

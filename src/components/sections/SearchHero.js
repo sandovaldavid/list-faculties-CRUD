@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import SearchIcon from '@/components/icons/SearchIcon';
+import WaveDecoration from '@/components/icons/WaveDecoration';
 
 export default function SearchHero({ faculties = [] }) {
     const [searchQuery, setSearchQuery] = useState('');
@@ -38,14 +40,21 @@ export default function SearchHero({ faculties = [] }) {
         <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-blue-700 py-20 md:py-28 text-white overflow-hidden h-screen">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        ¿Qué facultad o escuela buscas hoy?
-                    </h1>
-                    <p className="text-xl mb-10 text-white max-w-2xl mx-auto">
-                        Encuentra rápidamente información sobre las facultades y escuelas de la
-                        Universidad Nacional de Piura.
-                    </p>
-
+                    <div className="relative z-10 text-center mb-12">
+                        <div className="inline-flex items-center justify-center p-3 bg-blue-800/50 rounded-full mb-6 backdrop-blur-sm border border-blue-400/30 animate-fade-in-up">
+                            <span className="text-blue-200 text-sm font-semibold tracking-wide uppercase">
+                                Directorio Universitario
+                            </span>
+                        </div>
+                        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight animate-fade-in-up animation-delay-100">
+                            Encuentra tu <span className="text-blue-300">Escuela y Pabellón</span>
+                        </h1>
+                        <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed font-light animate-fade-in-up animation-delay-200">
+                            Ubica rápidamente tu facultad, conoce los pabellones y accede a la
+                            información oficial de la Universidad Nacional de Piura.
+                        </p>
+                        <div className="w-24 h-1 bg-blue-400 mx-auto rounded-full animate-scale-x animation-delay-300"></div>
+                    </div>
                     {/* Search Input */}
                     <div className="relative max-w-2xl mx-auto mb-8 border border-white rounded-full">
                         <div className="relative">
@@ -58,19 +67,7 @@ export default function SearchHero({ faculties = [] }) {
                                 placeholder="Buscar facultad o escuela..."
                                 className="w-full px-6 py-4 pl-14 text-lg rounded-full text-gray-50 placeholder-gray-300 shadow-2xl focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-opacity-75 focus-visible:outline-none transition-all duration-200"
                             />
-                            <svg
-                                className="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                                />
-                            </svg>
+                            <SearchIcon className="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-300" />
                         </div>
 
                         {/* Autocomplete Suggestions */}
@@ -79,7 +76,7 @@ export default function SearchHero({ faculties = [] }) {
                                 {filteredFaculties.slice(0, 5).map(faculty => (
                                     <button
                                         key={faculty.id}
-                                        onClick={() => handleSelectFaculty(faculty.id)}
+                                        onClick={() => handleSelectFaculty(faculty.slug)}
                                         className="w-full px-6 py-3 text-left hover:bg-blue-50 transition-colors border-b border-gray-100 last:border-b-0"
                                     >
                                         <p className="font-medium text-gray-900">{faculty.name}</p>
@@ -114,16 +111,7 @@ export default function SearchHero({ faculties = [] }) {
 
             {/* Bottom wave decoration */}
             <div className="absolute bottom-0 left-0 right-0">
-                <svg
-                    className="w-full h-24 md:h-36 text-gray-50"
-                    viewBox="0 0 1200 120"
-                    preserveAspectRatio="none"
-                >
-                    <path
-                        fill="currentColor"
-                        d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5,73.84,4.36,147.54-16.88,218.2-35.26,69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34,92.64,30.79,216.15,70.08,303,3.32V120Z"
-                    ></path>
-                </svg>
+                <WaveDecoration className="w-full h-24 md:h-36 text-gray-50" />
             </div>
         </section>
     );

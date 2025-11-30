@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import FacultyCard from '../faculty/FacultyCard';
+import { SadFaceIcon } from '@/components/icons/StatusIcons';
 
 export default function FacultyDirectory({ faculties = [] }) {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -79,19 +80,7 @@ export default function FacultyDirectory({ faculties = [] }) {
                     </div>
                 ) : (
                     <div className="text-center py-12">
-                        <svg
-                            className="w-16 h-16 mx-auto text-gray-300 mb-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={1.5}
-                                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                            />
-                        </svg>
+                        <SadFaceIcon className="w-16 h-16 mx-auto text-gray-300 mb-4" />
                         <p className="text-gray-500 text-lg">
                             No se encontraron facultades en esta categoría
                         </p>
