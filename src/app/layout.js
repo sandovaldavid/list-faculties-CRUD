@@ -1,9 +1,6 @@
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
 
 // Define constants for better maintenance
 const SITE_URL = 'https://facultades-unp.devsandoval.me';
@@ -103,7 +100,7 @@ export default function RootLayout({ children }) {
                 <meta property="og:image" content={SITE_IMAGE} />
                 <meta property="og:url" content={SITE_URL} />
             </head>
-            <body className={inter.className}>
+            <body className="font-sans">
                 <Navbar />
                 <main className="w-full">{children}</main>
                 <Footer />
