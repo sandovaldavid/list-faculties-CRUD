@@ -3,8 +3,8 @@
     "version": "3.0.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
+        "dev": "next dev --webpack",
+        "build": "next build --webpack",
         "start": "next start",
         "lint": "next lint",
         "format": "prettier --write .",
@@ -18,12 +18,13 @@
         "cloudinary": "^2.4.0",
         "dotenv": "^17.2.3",
         "js-cookie": "^3.0.5",
+        "knex": "^3.1.0",
         "lucide-react": "^0.555.0",
         "mysql2": "^3.12.0",
         "next": "16.0.5",
+        "pg": "^8.16.3",
         "react": "^19.2.0",
         "react-dom": "^19.2.0",
-        "serverless-mysql": "^2.0.0",
         "sonner": "^2.0.7"
     },
     "devDependencies": {

@@ -8,5 +8,6 @@ module.exports = {
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
         database: process.env.DB_DATABASE,
+        client: process.env.DB_CLIENT || 'mysql2',
     },
 };
