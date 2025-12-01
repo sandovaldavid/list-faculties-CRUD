@@ -48,7 +48,7 @@ function Navbar() {
 
     return (
         <nav
-            className={`w-full fixed top-0 z-50 transition-all duration-300 bg-zinc-600/70 backdrop-blur-md text-white border-b border-white/10 ${
+            className={`w-full fixed top-0 z-50 transition-all duration-300 bg-slate-800/70 backdrop-blur-md text-white border-b border-white/10 ${
                 scrolled ? 'shadow-lg' : 'shadow-sm'
             }`}
         >
@@ -83,7 +83,7 @@ function Navbar() {
                             className={`relative px-3 py-2 rounded-md transition duration-300 ${
                                 pathname === '/faculties'
                                     ? 'font-medium text-blue-400'
-                                    : 'text-gray-300 hover:text-white hover:bg-zinc-700/50'
+                                    : 'text-gray-300 hover:text-white hover:bg-zinc-800/60'
                             }`}
                         >
                             <span className="flex items-center">
@@ -100,7 +100,7 @@ function Navbar() {
                             className={`relative px-3 py-2 rounded-md transition duration-300 ${
                                 pathname === '/about'
                                     ? 'font-medium text-blue-400'
-                                    : 'text-gray-300 hover:text-white hover:bg-zinc-700/50'
+                                    : 'text-gray-300 hover:text-white hover:bg-zinc-800/60'
                             }`}
                         >
                             <span className="flex items-center">
