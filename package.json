@@ -27,6 +27,7 @@
         "sonner": "^2.0.7"
     },
     "devDependencies": {
+        "baseline-browser-mapping": "^2.8.32",
         "eslint": "^9.39.1",
         "eslint-config-next": "16.0.5",
         "eslint-config-prettier": "^10.1.2",
