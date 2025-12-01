@@ -92,7 +92,7 @@ export default function SearchHero({ faculties = [] }) {
                     </div>
 
                     {/* Quick Access Chips */}
-                    <div className="hidden md:flex flex-wrap justify-center align-center gap-3">
+                    <div className="flex flex-wrap justify-center align-center gap-3">
                         <div className="mr-2 flex items-center">
                             <span className="text-sm text-white font-medium">Accesos rápidos:</span>
                         </div>
