@@ -68,7 +68,7 @@ function Navbar() {
                             </div>
                             <div className="flex flex-col leading-none">
                                 <h3 className="text-lg md:text-xl font-bold transition-colors duration-300 text-white">
-                                    Facultades UNP
+                                    Mapa UNP
                                 </h3>
                                 <span className="text-xs font-bold hidden sm:block">
                                     Universidad Nacional de Piura
