@@ -1,50 +1,48 @@
 // Configuración SEO centralizada
-const SITE_URL = 'https://facultades-unp.devsandoval.me';
-const SITE_NAME = 'Sistema de Gestión de Facultades | UNP';
+const SITE_URL = 'https://mapa-unp.devsandoval.me';
+const SITE_NAME = 'UNP Campus Map | Directorio Universitario';
 const DEFAULT_DESCRIPTION =
-    'Sistema CRUD para gestionar facultades de la Universidad Nacional de Piura. Crea, lee, actualiza y elimina información académica.';
+    'Herramienta de navegación y mapa interactivo para ubicar facultades, escuelas y pabellones en el campus de la Universidad Nacional de Piura.';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og/og-faculties-unp.png`;
 const AUTHOR = 'David Sandoval';
 const TWITTER_HANDLE = '@dev_sandoval';
 const LOCALE = 'es_PE';
-const THEME_COLOR = '#1F2937';
+const THEME_COLOR = '#1e3a8a';
 
 // Configuración para páginas específicas
 const PAGE_METADATA = {
     home: {
-        title: 'Inicio | Sistema de Gestión de Facultades UNP',
+        title: 'Inicio | UNP Campus Map',
         description:
-            'Página de inicio del sistema de gestión de facultades de la Universidad Nacional de Piura.',
+            'Encuentra rápidamente la ubicación de tu facultad o escuela en la Universidad Nacional de Piura. Mapa interactivo y directorio oficial.',
         path: '/',
     },
     faculties: {
-        title: 'Facultades | Sistema de Gestión de Facultades UNP',
+        title: 'Directorio de Facultades | UNP Campus Map',
         description:
-            'Explora todas las facultades de la Universidad Nacional de Piura en nuestro sistema de gestión académica.',
+            'Lista completa de las 14 facultades y escuelas profesionales. Encuentra su ubicación en el campus y enlaces institucionales.',
         path: '/faculties',
     },
     facultyDetail: {
-        title: 'Detalles de Facultad | Sistema de Gestión de Facultades UNP',
+        title: 'Ubicación de Facultad | UNP Campus Map',
         description:
-            'Información detallada sobre una facultad específica de la Universidad Nacional de Piura.',
+            'Detalles de ubicación, pabellones y escuelas profesionales de esta facultad. Incluye mapa y accesos directos.',
         path: '/faculties/:id',
     },
     newFaculty: {
-        title: 'Nueva Facultad | Sistema de Gestión de Facultades UNP',
-        description:
-            'Crear una nueva facultad en el sistema de gestión académica de la Universidad Nacional de Piura.',
+        title: 'Administración | UNP Campus Map',
+        description: 'Panel de administración para actualizar el directorio de facultades.',
         path: '/new',
     },
     editFaculty: {
-        title: 'Editar Facultad | Sistema de Gestión de Facultades UNP',
-        description:
-            'Modificar la información de una facultad existente en el sistema de la Universidad Nacional de Piura.',
+        title: 'Editar Facultad | UNP Campus Map',
+        description: 'Actualizar información y coordenadas de facultades.',
         path: '/faculties/edit/:id',
     },
     about: {
-        title: 'Acerca de | Sistema de Gestión de Facultades UNP',
+        title: 'Acerca del Proyecto | UNP Campus Map',
         description:
-            'Información sobre el sistema de gestión de facultades de la Universidad Nacional de Piura.',
+            'Conoce la iniciativa Open Source creada por devsandoval para mejorar la navegación estudiantil en la UNP.',
         path: '/about',
     },
 };
@@ -104,17 +102,6 @@ const generateBasicMetadata = (pageKey, params = {}) => {
     };
 };
 
-// Función para generar configuración de viewport
-const generateViewport = () => {
-    return {
-        width: 'device-width',
-        initialScale: 1,
-        maximumScale: 5,
-        themeColor: THEME_COLOR,
-        colorScheme: 'light only',
-    };
-};
-
 export {
     SITE_URL,
     SITE_NAME,
@@ -125,6 +112,5 @@ export {
     LOCALE,
     THEME_COLOR,
     generateBasicMetadata,
-    generateViewport,
     getCanonicalUrl,
 };

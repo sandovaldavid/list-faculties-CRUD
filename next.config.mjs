@@ -17,13 +17,15 @@ const nextConfig = {
         NEXT_PUBLIC_VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL,
     },
     async redirects() {
-        return [
-            {
-                source: '/sitemap.xml',
-                destination: '/api/sitemap',
-                permanent: true,
-            },
-        ];
+        return [];
+    },
+    webpack: config => {
+        config.externals.push({
+            'utf-8-validate': 'commonjs utf-8-validate',
+            bufferutil: 'commonjs bufferutil',
+            knex: 'commonjs knex',
+        });
+        return config;
     },
 };
 

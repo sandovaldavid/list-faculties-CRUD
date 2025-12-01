@@ -1,15 +1,17 @@
 import { NextResponse } from 'next/server';
-import { pool } from '@/libs/mysql.js';
 import cloudinary from '@/libs/cloudinary';
 import { processImage } from '@/libs/processImage';
+import { facultyService } from '@/services/facultyService';
 
 export async function GET(request, { params }) {
     try {
-        const result = await pool.query('SELECT * FROM faculties WHERE id = ?', [params.idFaculty]);
-        if (result.length === 0) {
+        const { idFaculty } = await params;
+        const result = await facultyService.getFacultyById(idFaculty);
+
+        if (!result) {
             return NextResponse.json({ message: 'Faculty not found' }, { status: 404 });
         }
-        return NextResponse.json(result[0]);
+        return NextResponse.json(result);
     } catch (error) {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
@@ -17,9 +19,11 @@ export async function GET(request, { params }) {
 
 export async function DELETE(request, { params }) {
     try {
-        const response = await pool.query('DELETE FROM faculties WHERE id = ?', [params.idFaculty]);
-        if (response.affectedRows === 0) {
-            return NextResponse.json({ message: ' Faculty not found' }, { status: 404 });
+        const { idFaculty } = await params;
+        const deleted = await facultyService.deleteFaculty(idFaculty);
+
+        if (!deleted) {
+            return NextResponse.json({ message: 'Faculty not found' }, { status: 404 });
         }
         return new Response(null, { status: 204 });
     } catch (e) {
@@ -29,15 +33,17 @@ export async function DELETE(request, { params }) {
 
 export async function PUT(request, { params }) {
     try {
+        const { idFaculty } = await params;
         const data = await request.formData();
 
         const image = data.get('facultyImage');
-        const updateFaculty = {
+        const updateData = {
             name: data.get('name'),
+            slug: data.get('slug'),
             description: data.get('description'),
         };
 
-        if (!data.get('name')) {
+        if (!updateData.name) {
             return NextResponse.json({ message: 'name is required' }, { status: 400 });
         }
 
@@ -51,23 +57,16 @@ export async function PUT(request, { params }) {
             );
 
             if (result && result.secure_url) {
-                updateFaculty.path_img = result.secure_url;
+                updateData.cover_image_url = result.secure_url;
             }
         }
 
-        const response = await pool.query('UPDATE faculties SET ? WHERE id = ?', [
-            updateFaculty,
-            params.idFaculty,
-        ]);
-
-        if (response.affectedRows === 0) {
-            return NextResponse.json({ message: 'Faculty not found' }, { status: 404 });
-        }
+        const updatedFaculty = await facultyService.updateFaculty(idFaculty, updateData);
 
         return NextResponse.json(
             {
                 message: 'Faculty updated successfully',
-                faculty: updateFaculty,
+                faculty: updatedFaculty,
             },
             { status: 200 }
         );

@@ -1,0 +1,69 @@
+services:
+    # Production web service
+    web:
+        container_name: faculties_web_prod
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.prod
+        ports:
+            - '3000:3000'
+        environment:
+            - NODE_ENV=production
+            - DATABASE_URL=mysql://${DB_USER:-user_facultades}:${DB_PASSWORD:-password}@db:3306/${DB_DATABASE:-db_facultades}
+        depends_on:
+            db:
+                condition: service_healthy
+        restart: always
+        networks:
+            - faculties-network
+        # Resource limits for production
+        deploy:
+            resources:
+                limits:
+                    cpus: '1.0'
+                    memory: 1G
+                reservations:
+                    cpus: '0.5'
+                    memory: 512M
+
+    # Database service
+    db:
+        image: mysql:8.0
+        container_name: faculties_db_prod
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-password}
+            MYSQL_DATABASE: ${DB_DATABASE:-db_facultades}
+            MYSQL_USER: ${DB_USER:-user_facultades}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+        ports:
+            - '3306:3306'
+        volumes:
+            - mysql_prod_data:/var/lib/mysql
+            - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+            # Backup directory
+            - ./backups:/backups
+        command: --default-authentication-plugin=mysql_native_password
+        healthcheck:
+            test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+            timeout: 20s
+            retries: 10
+        restart: always
+        networks:
+            - faculties-network
+        # Resource limits for database
+        deploy:
+            resources:
+                limits:
+                    cpus: '1.0'
+                    memory: 2G
+                reservations:
+                    cpus: '0.5'
+                    memory: 1G
+
+volumes:
+    mysql_prod_data:
+        driver: local
+
+networks:
+    faculties-network:
+        driver: bridge

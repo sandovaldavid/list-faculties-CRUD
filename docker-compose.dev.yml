@@ -1,0 +1,55 @@
+services:
+    # Development web service
+    web:
+        container_name: faculties_web_dev
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.dev
+        ports:
+            - '3000:3000'
+        volumes:
+            # Mount source code for hot reload
+            - .:/app
+            # Prevent node_modules from being overwritten
+            - /app/node_modules
+            - /app/.next
+        environment:
+            - NODE_ENV=development
+            - DATABASE_URL=mysql://${DB_USER:-user_facultades}:${DB_PASSWORD:-password}@db:3306/${DB_DATABASE:-db_facultades}
+        depends_on:
+            db:
+                condition: service_healthy
+        restart: unless-stopped
+        networks:
+            - faculties-network
+
+    # Database service
+    db:
+        image: mysql:8.0
+        container_name: faculties_db_dev
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-password}
+            MYSQL_DATABASE: ${DB_DATABASE:-db_facultades}
+            MYSQL_USER: ${DB_USER:-user_facultades}
+            MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+        ports:
+            - '3306:3306'
+        volumes:
+            - mysql_dev_data:/var/lib/mysql
+            - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+        command: --default-authentication-plugin=mysql_native_password
+        healthcheck:
+            test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+            timeout: 20s
+            retries: 10
+        restart: unless-stopped
+        networks:
+            - faculties-network
+
+volumes:
+    mysql_dev_data:
+        driver: local
+
+networks:
+    faculties-network:
+        driver: bridge

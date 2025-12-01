@@ -1,13 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 body {
-    @apply bg-gray-950;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
     margin: 0;
     padding: 0;
 }
@@ -60,5 +53,12 @@ body {
 @layer utilities {
     .hover-lift {
         @apply transition-transform duration-300 hover:-translate-y-1;
+    }
+
+    .bg-grid-pattern {
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
     }
 }

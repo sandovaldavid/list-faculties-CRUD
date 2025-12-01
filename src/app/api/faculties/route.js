@@ -1,17 +1,19 @@
-import { NextResponse } from 'next/server';
-import { pool } from '@/libs/mysql';
 import cloudinary from '@/libs/cloudinary';
 import { processImage } from '@/libs/processImage';
+import { successResponse, errorResponse } from '@/libs/apiResponse';
+import { facultyService } from '@/services/facultyService';
 
 export async function GET() {
     try {
-        const results = await pool.query('SELECT * FROM faculties');
+        const results = await facultyService.getAllFaculties();
+
         if (results.length === 0) {
-            return NextResponse.json({ message: 'No faculties found' }, { status: 404 });
+            return errorResponse('No faculties found', 404);
         }
-        return NextResponse.json(results);
+
+        return successResponse(results);
     } catch (e) {
-        return NextResponse.json({ error: e.message }, { status: 500 });
+        return errorResponse(e.message, 500);
     }
 }
 
@@ -21,7 +23,7 @@ export async function POST(request) {
         const image = data.get('facultyImage');
 
         if (!data.get('name')) {
-            return NextResponse.json({ message: 'Name is required' }, { status: 400 });
+            return errorResponse('Name is required', 400);
         }
 
         let path_img = '';
@@ -37,25 +39,15 @@ export async function POST(request) {
             }
         }
 
-        const result = await pool.query('INSERT INTO faculties SET ?', {
+        const newFaculty = await facultyService.createFaculty({
             name: data.get('name'),
+            slug: data.get('slug'),
             description: data.get('description') || '',
-            path_img,
+            cover_image_url: path_img,
         });
 
-        return NextResponse.json(
-            {
-                id: result.insertId,
-                name: data.get('name'),
-                description: data.get('description') || '',
-                path_img,
-            },
-            { status: 201 }
-        );
+        return successResponse(newFaculty, 201);
     } catch (error) {
-        return NextResponse.json(
-            { message: 'Error creating faculty: ' + error.message },
-            { status: 500 }
-        );
+        return errorResponse('Error creating faculty: ' + error.message, 500);
     }
 }

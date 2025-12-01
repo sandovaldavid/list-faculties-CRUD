@@ -1,11 +1,11 @@
 {
-	"name": "Sistema de Gestión de Facultades UNP",
-	"short_name": "Facultades UNP",
-	"description": "Sistema CRUD para la gestión de facultades universitarias de la Universidad Nacional de Piura",
+	"name": "UNP Campus Map & Directory",
+	"short_name": "UNP Map",
+	"description": "Mapa interactivo y directorio de ubicación para facultades y escuelas de la Universidad Nacional de Piura.",
 	"start_url": "/",
 	"display": "standalone",
-	"background_color": "#111827",
-	"theme_color": "#1F2937",
+	"background_color": "#1e3a8a",
+	"theme_color": "#1e3a8a",
 	"orientation": "portrait-primary",
 	"icons": [
 		{
