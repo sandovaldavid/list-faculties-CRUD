@@ -1,4 +1,4 @@
-import { pool } from '@/libs/mysql';
+import { dbInstance as db } from '@/libs/db';
 
 /**
  * Service to handle faculty related database operations
@@ -11,32 +11,24 @@ export const facultyService = {
      */
     async getAllFaculties(searchQuery = '') {
         try {
-            let query = `
-                SELECT 
-                    f.id,
-                    f.name,
-                    f.slug,
-                    f.cover_image_url,
-                    f.description,
-                    COUNT(s.id) as schools_count
-                FROM faculties f
-                LEFT JOIN schools s ON f.id = s.faculty_id
-            `;
-
-            const params = [];
+            let query = db('faculties as f')
+                .select('f.id', 'f.name', 'f.slug', 'f.cover_image_url', 'f.description')
+                .count('s.id as schools_count')
+                .leftJoin('schools as s', 'f.id', 's.faculty_id')
+                .groupBy('f.id')
+                .orderBy('f.name', 'asc');
 
             if (searchQuery) {
-                query += ` WHERE f.name LIKE ? OR f.description LIKE ? OR s.name LIKE ?`;
-                const searchPattern = `%${searchQuery}%`;
-                params.push(searchPattern, searchPattern, searchPattern);
+                query = query.where(builder => {
+                    builder
+                        .where('f.name', 'like', `%${searchQuery}%`)
+                        .orWhere('f.description', 'like', `%${searchQuery}%`)
+                        .orWhere('s.name', 'like', `%${searchQuery}%`);
+                });
             }
 
-            query += ` GROUP BY f.id ORDER BY f.name ASC`;
-
-            const result =
-                params.length > 0 ? await pool.query(query, params) : await pool.query(query);
-
-            return Array.isArray(result) ? result : [];
+            const result = await query;
+            return result || [];
         } catch (error) {
             console.error('Error in facultyService.getAllFaculties:', error);
             throw error;
@@ -50,20 +42,12 @@ export const facultyService = {
      */
     async getFacultySchools(facultyId) {
         try {
-            const results = await pool.query(
-                `
-                SELECT 
-                    id,
-                    name,
-                    pavilion,
-                    official_website_url
-                FROM schools
-                WHERE faculty_id = ?
-                ORDER BY name ASC
-                `,
-                [facultyId]
-            );
-            return Array.isArray(results) ? results : [];
+            const results = await db('schools')
+                .select('id', 'name', 'pavilion', 'official_website_url')
+                .where('faculty_id', facultyId)
+                .orderBy('name', 'asc');
+
+            return results || [];
         } catch (error) {
             console.error('Error in facultyService.getFacultySchools:', error);
             throw error;
@@ -78,12 +62,9 @@ export const facultyService = {
     async getFacultyBySlug(slug) {
         try {
             console.log('facultyService.getFacultyBySlug querying for:', slug);
-            const results = await pool.query('SELECT * FROM faculties WHERE slug = ?', [slug]);
-            console.log(
-                'facultyService.getFacultyBySlug result count:',
-                Array.isArray(results) ? results.length : 'not array'
-            );
-            return Array.isArray(results) ? results[0] : null;
+            const result = await db('faculties').where('slug', slug).first();
+            console.log('facultyService.getFacultyBySlug result:', result ? 'found' : 'not found');
+            return result || null;
         } catch (error) {
             console.error('Error in facultyService.getFacultyBySlug:', error);
             throw error;
@@ -97,20 +78,22 @@ export const facultyService = {
      */
     async createFaculty(facultyData) {
         try {
-            // Ensure we use the correct column name for the database
             const dbData = {
                 name: facultyData.name,
                 slug: facultyData.slug,
                 description: facultyData.description,
-                cover_image_url: facultyData.cover_image_url || facultyData.path_img, // Handle both for compatibility
+                cover_image_url: facultyData.cover_image_url || facultyData.path_img,
             };
 
             // Remove undefined keys
             Object.keys(dbData).forEach(key => dbData[key] === undefined && delete dbData[key]);
 
-            const result = await pool.query('INSERT INTO faculties SET ?', dbData);
+            const [id] = await db('faculties').insert(dbData).returning('id');
+
+            const insertedId = typeof id === 'object' ? id.id : id;
+
             return {
-                id: result.insertId,
+                id: insertedId,
                 ...dbData,
             };
         } catch (error) {
@@ -137,7 +120,7 @@ export const facultyService = {
             // Remove undefined keys
             Object.keys(dbData).forEach(key => dbData[key] === undefined && delete dbData[key]);
 
-            await pool.query('UPDATE faculties SET ? WHERE id = ?', [dbData, id]);
+            await db('faculties').where('id', id).update(dbData);
             return { id, ...dbData };
         } catch (error) {
             console.error('Error in facultyService.updateFaculty:', error);
@@ -152,8 +135,8 @@ export const facultyService = {
      */
     async getFacultyById(id) {
         try {
-            const results = await pool.query('SELECT * FROM faculties WHERE id = ?', [id]);
-            return Array.isArray(results) ? results[0] : null;
+            const result = await db('faculties').where('id', id).first();
+            return result || null;
         } catch (error) {
             console.error('Error in facultyService.getFacultyById:', error);
             throw error;
@@ -167,8 +150,8 @@ export const facultyService = {
      */
     async deleteFaculty(id) {
         try {
-            const result = await pool.query('DELETE FROM faculties WHERE id = ?', [id]);
-            return result.affectedRows > 0;
+            const rowsAffected = await db('faculties').where('id', id).del();
+            return rowsAffected > 0;
         } catch (error) {
             console.error('Error in facultyService.deleteFaculty:', error);
             throw error;
