@@ -17,14 +17,19 @@ const config = {
     },
 };
 
-// Singleton instance
-let instance = null;
+/** @type {import('knex').Knex} */
+let instance;
 
-export function getDb() {
-    if (!instance) {
-        instance = knex(config);
+if (process.env.NODE_ENV === 'production') {
+    instance = knex(config);
+} else {
+    if (!global.knexInstance) {
+        global.knexInstance = knex(config);
     }
-    return instance;
+    instance = global.knexInstance;
 }
 
-export const dbInstance = getDb();
+export const dbInstance = instance;
+export function getDb() {
+    return instance;
+}
