@@ -12,6 +12,7 @@ function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [animateMenu, setAnimateMenu] = useState(false);
     const pathname = usePathname();
+    const isAdmin = useAdmin();
 
     // Efecto para detectar el scroll y aplicar estilos
     useEffect(() => {
@@ -53,12 +54,12 @@ function Navbar() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
+                <div className="flex justify-between items-center h-16">
                     {/* Logo/Brand con icono educativo */}
                     <div className="flex items-center">
                         <Link
                             href="/"
-                            className={`flex items-center hover:text-blue-600 transition duration-300 ${
+                            className={`flex items-center hover:text-blue-400 transition duration-300 ${
                                 pathname === '/' && 'text-blue-500'
                             }`}
                         >
@@ -114,7 +115,7 @@ function Navbar() {
 
                         <div className="h-6 mx-2 border-l border-gray-400 opacity-30"></div>
 
-                        {useAdmin() && (
+                        {isAdmin && (
                             <Link
                                 href="/new"
                                 className="flex items-center px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
@@ -134,17 +135,17 @@ function Navbar() {
                         >
                             <div className="relative w-6 h-6">
                                 <span
-                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                    className={`absolute top-1/2 left-0 h-0.5 w-6 bg-white transform transition-all duration-300 -mt-0.5 ${
                                         isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'
                                     }`}
                                 ></span>
                                 <span
-                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                    className={`absolute top-1/2 left-0 h-0.5 w-6 bg-white transform transition-all duration-300 -mt-0.5 ${
                                         isOpen ? 'opacity-0' : 'opacity-100'
                                     }`}
                                 ></span>
                                 <span
-                                    className={`absolute h-0.5 w-6 bg-white transform transition-all duration-300 ${
+                                    className={`absolute top-1/2 left-0 h-0.5 w-6 bg-white transform transition-all duration-300 -mt-0.5 ${
                                         isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'
                                     }`}
                                 ></span>
@@ -157,7 +158,7 @@ function Navbar() {
             {/* Mobile Menu con animación de deslizamiento */}
             {isOpen && (
                 <div
-                    className={`md:hidden overflow-hidden transition-all duration-300 bg-zinc-900/90 backdrop-blur-md text-white border-t border-white/10 ${
+                    className={`md:hidden overflow-hidden transition-all duration-300 bg-slate-800/70 backdrop-blur-md text-white border-t border-white/10 ${
                         animateMenu ? 'max-h-64' : 'max-h-0'
                     }`}
                     style={{ transition: 'max-height 300ms ease-in-out' }}
@@ -167,8 +168,8 @@ function Navbar() {
                             href="/faculties"
                             className={`block px-4 py-3 rounded-lg transition duration-200 ${
                                 pathname === '/faculties'
-                                    ? 'font-medium bg-zinc-700/70 text-blue-400'
-                                    : 'hover:bg-zinc-700/50'
+                                    ? 'font-medium bg-blue-500/20 text-blue-400'
+                                    : 'hover:bg-white/5'
                             }`}
                         >
                             <span className="flex items-center">
@@ -183,8 +184,8 @@ function Navbar() {
                             href="/about"
                             className={`block px-4 py-3 rounded-lg transition duration-200 ${
                                 pathname === '/about'
-                                    ? 'font-medium bg-zinc-700/70 text-blue-400'
-                                    : 'hover:bg-zinc-700/50'
+                                    ? 'font-medium bg-blue-500/20 text-blue-400'
+                                    : 'hover:bg-white/5'
                             }`}
                         >
                             <span className="flex items-center">
@@ -197,7 +198,7 @@ function Navbar() {
 
                         <div className="border-t border-gray-200 dark:border-zinc-700 my-3 opacity-30"></div>
 
-                        {useAdmin() && (
+                        {isAdmin && (
                             <Link
                                 href="/new"
                                 className={`flex items-center justify-center px-4 py-3 rounded-lg transition-all duration-300 text-white ${

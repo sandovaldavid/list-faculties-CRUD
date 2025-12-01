@@ -47,7 +47,7 @@ export default function SearchHero({ faculties = [] }) {
                             </span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight animate-fade-in-up animation-delay-100">
-                            Encuentra tu <span className="text-blue-300">Escuela y Pabellón</span>
+                            Encuentra tu <span className="text-blue-200">Escuela y Pabellón</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed font-light animate-fade-in-up animation-delay-200">
                             Ubica rápidamente tu facultad, conoce los pabellones y accede a la
@@ -92,7 +92,7 @@ export default function SearchHero({ faculties = [] }) {
                     </div>
 
                     {/* Quick Access Chips */}
-                    <div className="flex flex-wrap justify-center align-center gap-3">
+                    <div className="hidden md:flex flex-wrap justify-center align-center gap-3">
                         <div className="mr-2 flex items-center">
                             <span className="text-sm text-white font-medium">Accesos rápidos:</span>
                         </div>
