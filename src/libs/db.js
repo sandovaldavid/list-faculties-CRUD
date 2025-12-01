@@ -17,17 +17,16 @@ const config = {
     },
 };
 
-/** @type {import('knex').Knex} */
+/**
+ * Single connection instance
+ * @type {import('knex').Knex}
+ * */
 let instance;
 
-if (process.env.NODE_ENV === 'production') {
-    instance = knex(config);
-} else {
-    if (!global.knexInstance) {
-        global.knexInstance = knex(config);
-    }
-    instance = global.knexInstance;
+if (!global.knexInstance) {
+    global.knexInstance = knex(config);
 }
+instance = global.knexInstance;
 
 export const dbInstance = instance;
 export function getDb() {
