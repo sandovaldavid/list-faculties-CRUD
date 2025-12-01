@@ -2,6 +2,7 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { generateBasicMetadata, THEME_COLOR } from '@/libs/seoConfig';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = generateBasicMetadata('home');
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
                 <Navbar />
                 <main className="w-full">{children}</main>
                 <Footer />
+                <Analytics />
             </body>
         </html>
     );
