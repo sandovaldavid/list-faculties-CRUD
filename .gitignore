@@ -36,9 +36,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Default ignored files
+# IDE and Editors
+.idea/
+*.iml
+.vscode/
 /shelf/
 /workspace.xml
-# Editor-based HTTP Client requests
 /httpRequests/
-.vercel
+
+# local docker mounts
+/mysql/
+/backups/
+

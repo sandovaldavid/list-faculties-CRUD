@@ -26,7 +26,7 @@ export default function MissionSection() {
                 <h3 className="text-xl font-bold mb-4 text-gray-800">Conectemos</h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                     <a
-                        href="https://instagram.com/dev.sandoval"
+                        href="https://instagram.com/jdsandovals"
                         target="_blank"
                         className="flex flex-col items-center justify-center gap-2 px-4 py-3 border border-gray-200 rounded-lg hover:border-pink-500 hover:bg-pink-50 transition-all duration-300 group"
                         rel="noopener noreferrer"
@@ -43,7 +43,7 @@ export default function MissionSection() {
                         </span>
                     </a>
                     <a
-                        href="https://facebook.com/devsandoval.web"
+                        href="https://facebook.com/jdsandovals"
                         target="_blank"
                         className="flex flex-col items-center justify-center gap-2 px-4 py-3 border border-gray-200 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 group"
                         rel="noopener noreferrer"
@@ -60,7 +60,7 @@ export default function MissionSection() {
                         </span>
                     </a>
                     <a
-                        href="https://linkedin.com/in/devsandoval"
+                        href="https://linkedin.com/in/jdsandovals"
                         target="_blank"
                         className="flex flex-col items-center justify-center gap-2 px-4 py-3 border border-gray-200 rounded-lg hover:border-blue-700 hover:bg-blue-50 transition-all duration-300 group"
                         rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export default function MissionSection() {
                         </span>
                     </a>
                     <a
-                        href="https://github.com/dev-sandoval"
+                        href="https://github.com/sandovaldavid"
                         target="_blank"
                         className="flex flex-col items-center justify-center gap-2 px-4 py-3 border border-gray-200 rounded-lg hover:border-gray-800 hover:bg-gray-50 transition-all duration-300 group"
                         rel="noopener noreferrer"
@@ -94,7 +94,7 @@ export default function MissionSection() {
                         </span>
                     </a>
                     <a
-                        href="https://twitter.com/dev_sandoval"
+                        href="https://x.com/jdsandovals"
                         target="_blank"
                         className="flex flex-col items-center justify-center gap-2 px-4 py-3 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 group"
                         rel="noopener noreferrer"

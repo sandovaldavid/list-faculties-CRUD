@@ -1,11 +1,11 @@
 // Configuración SEO centralizada
-const SITE_URL = 'https://mapa-unp.devsandoval.me';
+const SITE_URL = 'https://mapa-unp.sandovaldavid.com';
 const SITE_NAME = 'UNP Campus Map | Directorio Universitario';
 const DEFAULT_DESCRIPTION =
-    'Herramienta de navegación y mapa interactivo para ubicar facultades, escuelas y pabellones en el campus de la Universidad Nacional de Piura.';
+    'Herramienta de navegación y directorio de ubicación para facultades, escuelas y pabellones en el campus de la Universidad Nacional de Piura.';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/images/og/og-faculties-unp.png`;
 const AUTHOR = 'David Sandoval';
-const TWITTER_HANDLE = '@dev_sandoval';
+const TWITTER_HANDLE = '@jdsandovals';
 const LOCALE = 'es_PE';
 const THEME_COLOR = '#1e3a8a';
 
@@ -14,7 +14,7 @@ const PAGE_METADATA = {
     home: {
         title: 'Inicio | UNP Campus Map',
         description:
-            'Encuentra rápidamente la ubicación de tu facultad o escuela en la Universidad Nacional de Piura. Mapa interactivo y directorio oficial.',
+            'Encuentra rápidamente la ubicación de tu facultad o escuela en la Universidad Nacional de Piura. Directorio oficial y guía del campus.',
         path: '/',
     },
     faculties: {
@@ -26,7 +26,7 @@ const PAGE_METADATA = {
     facultyDetail: {
         title: 'Ubicación de Facultad | UNP Campus Map',
         description:
-            'Detalles de ubicación, pabellones y escuelas profesionales de esta facultad. Incluye mapa y accesos directos.',
+            'Detalles de ubicación, pabellones y escuelas profesionales de esta facultad. Incluye coordenadas de pabellones y accesos directos.',
         path: '/faculties/:id',
     },
     newFaculty: {
@@ -42,7 +42,7 @@ const PAGE_METADATA = {
     about: {
         title: 'Acerca del Proyecto | UNP Campus Map',
         description:
-            'Conoce la iniciativa Open Source creada por devsandoval para mejorar la navegación estudiantil en la UNP.',
+            'Conoce la iniciativa Open Source creada por David Sandoval (sandovaldavid) para mejorar la navegación estudiantil en la UNP.',
         path: '/about',
     },
 };

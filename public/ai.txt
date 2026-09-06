@@ -8,11 +8,11 @@ Permission: allow
 Copyright: David Sandoval
 
 # Website Information
-Website: https://facultades-unp.devsandoval.me
+Website: https://mapa-unp.sandovaldavid.com
 Content: educational
 
 # Training Limitations
 Limitations: no-personal-data, credit-required
 
 # Contact Information
-Contact: contact@devsandoval.me
+Contact: hello@sandovaldavid.com

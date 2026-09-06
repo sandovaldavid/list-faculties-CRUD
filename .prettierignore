@@ -4,3 +4,5 @@ build
 dist
 public
 .vercel
+pnpm-lock.yaml
+bun.lock

@@ -6,11 +6,11 @@
         "dev": "next dev --webpack",
         "build": "next build --webpack",
         "start": "next start",
-        "lint": "next lint",
+        "lint": "eslint .",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
-        "check": "prettier --check . && eslint --ext .js,.jsx,.ts,.tsx ."
+        "lint:fix": "eslint --fix .",
+        "check": "prettier --check . && eslint ."
     },
     "dependencies": {
         "@tailwindcss/postcss": "^4.1.17",
