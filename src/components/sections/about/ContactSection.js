@@ -9,13 +9,13 @@ export default function ContactSection() {
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                     <a
-                        href="mailto:contact@devsandoval.me"
+                        href="mailto:hello@sandovaldavid.com"
                         className="px-8 py-4 bg-white text-blue-900 font-bold rounded-full hover:bg-blue-50 transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     >
                         Enviar Mensaje
                     </a>
                     <a
-                        href="https://devsandoval.me"
+                        href="https://sandovaldavid.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-all duration-300 ease-in-out transform hover:-translate-y-1"

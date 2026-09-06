@@ -59,11 +59,11 @@ export default function Footer() {
                         <p className="text-sm text-gray-400 mb-4">
                             Desarrollado por{' '}
                             <span className="text-white font-semibold">David Sandoval</span>{' '}
-                            (devsandoval)
+                            (sandovaldavid)
                         </p>
                         <div className="flex gap-4">
                             <a
-                                href="https://github.com/devsandoval"
+                                href="https://github.com/sandovaldavid"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white transition-colors"
@@ -72,7 +72,7 @@ export default function Footer() {
                                 <GitHubIcon className="w-6 h-6" />
                             </a>
                             <a
-                                href="https://linkedin.com/in/devsandoval"
+                                href="https://linkedin.com/in/jdsandovals"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white transition-colors"
@@ -81,7 +81,7 @@ export default function Footer() {
                                 <LinkedInIcon className="w-6 h-6" />
                             </a>
                             <a
-                                href="https://devsandoval.me"
+                                href="https://sandovaldavid.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-white transition-colors"
@@ -115,7 +115,7 @@ export default function Footer() {
                                 Acerca de
                             </Link>
                             <a
-                                href="https://github.com/dev-sandoval/faculties-web"
+                                href="https://github.com/sandovaldavid/unp-campus-map"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-gray-400 hover:text-blue-400 transition-colors"

@@ -1,5 +1,5 @@
 export default function robots() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mapa-unp.devsandoval.me';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://mapa-unp.sandovaldavid.com';
 
     return {
         rules: {

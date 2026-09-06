@@ -58,7 +58,7 @@ export default function UniversitySection() {
                                     </li>
                                     <li className="flex items-center">
                                         <span className="w-28 font-medium">Lema:</span>
-                                        <span>"Duc in altum"</span>
+                                        <span>&quot;Duc in altum&quot;</span>
                                     </li>
                                 </ul>
                             </div>

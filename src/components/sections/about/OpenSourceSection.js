@@ -20,7 +20,7 @@ export default function OpenSourceSection() {
 
                 <div className="flex flex-wrap justify-center gap-4">
                     <a
-                        href="https://github.com/dev-sandoval/faculties-web"
+                        href="https://github.com/sandovaldavid/unp-campus-map"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 hover:bg-black transition-all duration-300 ease-in-out rounded-full text-white font-medium hover:shadow-lg transform hover:-translate-y-1"
                         rel="noopener noreferrer"
@@ -29,7 +29,7 @@ export default function OpenSourceSection() {
                         <span>Ver Código Fuente</span>
                     </a>
                     <a
-                        href="https://github.com/dev-sandoval/faculties-web/blob/main/LICENSE"
+                        href="https://github.com/sandovaldavid/unp-campus-map/blob/main/LICENSE"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-8 py-3 bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 transition-all duration-300 ease-in-out rounded-full font-medium hover:shadow-md transform hover:-translate-y-1"
                         rel="noopener noreferrer"
